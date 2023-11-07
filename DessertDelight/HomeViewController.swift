@@ -18,12 +18,16 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        mealTableView.register(UINib(nibName: "MealListTableViewCell", bundle: nil), forCellReuseIdentifier: "MealListTableViewCell")
+        
+        self.title = "What's for Dessert!"
         
         loadMealList()
         mealTableView.reloadData()
         
         mealTableView.delegate = self
         mealTableView.dataSource = self
+        
     }
     
     private func loadMealList() {
@@ -48,8 +52,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MealTableViewCell", for: indexPath) as? MealTableViewCell else { return UITableViewCell() }
-        cell.mealTitle.text = dataSource[indexPath.row].meal
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MealListTableViewCell", for: indexPath) as? MealListTableViewCell else { return UITableViewCell() }
+        cell.setMeal(meal: dataSource[indexPath.row])
         return cell
     }
     

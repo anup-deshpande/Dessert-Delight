@@ -16,9 +16,11 @@
 		766676D92AF9B0DB00E00B17 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 766676D82AF9B0DB00E00B17 /* Alamofire */; };
 		766676DB2AF9B1BA00E00B17 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766676DA2AF9B1BA00E00B17 /* Meal.swift */; };
 		766676DD2AF9BECF00E00B17 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766676DC2AF9BECF00E00B17 /* NetworkService.swift */; };
-		766676DF2AF9C06A00E00B17 /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766676DE2AF9C06A00E00B17 /* MealTableViewCell.swift */; };
 		766676E12AF9C39E00E00B17 /* MealListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766676E02AF9C39E00E00B17 /* MealListResponse.swift */; };
 		766676E32AFAC7AF00E00B17 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766676E22AFAC7AF00E00B17 /* DetailViewController.swift */; };
+		766676E82AFAC91300E00B17 /* MealListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766676E62AFAC91300E00B17 /* MealListTableViewCell.swift */; };
+		766676E92AFAC91300E00B17 /* MealListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 766676E72AFAC91300E00B17 /* MealListTableViewCell.xib */; };
+		766676EC2AFACF8500E00B17 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 766676EB2AFACF8500E00B17 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,9 +34,10 @@
 		7644976A2AF98347005B825E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		766676DA2AF9B1BA00E00B17 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		766676DC2AF9BECF00E00B17 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		766676DE2AF9C06A00E00B17 /* MealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
 		766676E02AF9C39E00E00B17 /* MealListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListResponse.swift; sourceTree = "<group>"; };
 		766676E22AFAC7AF00E00B17 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		766676E62AFAC91300E00B17 /* MealListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListTableViewCell.swift; sourceTree = "<group>"; };
+		766676E72AFAC91300E00B17 /* MealListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealListTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				766676EC2AFACF8500E00B17 /* Kingfisher in Frameworks */,
 				766676D92AF9B0DB00E00B17 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,12 +78,13 @@
 				766676E22AFAC7AF00E00B17 /* DetailViewController.swift */,
 				766676E02AF9C39E00E00B17 /* MealListResponse.swift */,
 				766676DA2AF9B1BA00E00B17 /* Meal.swift */,
-				766676DE2AF9C06A00E00B17 /* MealTableViewCell.swift */,
 				766676DC2AF9BECF00E00B17 /* NetworkService.swift */,
 				764497622AF98344005B825E /* Main.storyboard */,
 				764497652AF98347005B825E /* Assets.xcassets */,
 				764497672AF98347005B825E /* LaunchScreen.storyboard */,
 				7644976A2AF98347005B825E /* Info.plist */,
+				766676E62AFAC91300E00B17 /* MealListTableViewCell.swift */,
+				766676E72AFAC91300E00B17 /* MealListTableViewCell.xib */,
 			);
 			path = DessertDelight;
 			sourceTree = "<group>";
@@ -102,6 +107,7 @@
 			name = DessertDelight;
 			packageProductDependencies = (
 				766676D82AF9B0DB00E00B17 /* Alamofire */,
+				766676EB2AFACF8500E00B17 /* Kingfisher */,
 			);
 			productName = DessertDelight;
 			productReference = 764497592AF98344005B825E /* DessertDelight.app */;
@@ -133,6 +139,7 @@
 			mainGroup = 764497502AF98344005B825E;
 			packageReferences = (
 				766676D72AF9B0DB00E00B17 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				766676EA2AFACF8500E00B17 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 7644975A2AF98344005B825E /* Products */;
 			projectDirPath = "";
@@ -148,6 +155,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				766676E92AFAC91300E00B17 /* MealListTableViewCell.xib in Resources */,
 				764497692AF98347005B825E /* LaunchScreen.storyboard in Resources */,
 				764497662AF98347005B825E /* Assets.xcassets in Resources */,
 				764497642AF98344005B825E /* Main.storyboard in Resources */,
@@ -164,9 +172,9 @@
 				766676DD2AF9BECF00E00B17 /* NetworkService.swift in Sources */,
 				766676DB2AF9B1BA00E00B17 /* Meal.swift in Sources */,
 				766676E12AF9C39E00E00B17 /* MealListResponse.swift in Sources */,
-				766676DF2AF9C06A00E00B17 /* MealTableViewCell.swift in Sources */,
 				764497612AF98344005B825E /* HomeViewController.swift in Sources */,
 				7644975D2AF98344005B825E /* AppDelegate.swift in Sources */,
+				766676E82AFAC91300E00B17 /* MealListTableViewCell.swift in Sources */,
 				7644975F2AF98344005B825E /* SceneDelegate.swift in Sources */,
 				766676E32AFAC7AF00E00B17 /* DetailViewController.swift in Sources */,
 			);
@@ -403,6 +411,14 @@
 				minimumVersion = 5.8.1;
 			};
 		};
+		766676EA2AFACF8500E00B17 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -410,6 +426,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 766676D72AF9B0DB00E00B17 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		766676EB2AFACF8500E00B17 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 766676EA2AFACF8500E00B17 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

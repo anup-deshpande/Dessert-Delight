@@ -7,6 +7,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyBeaver
 
 class NetworkService {
     
@@ -16,6 +17,7 @@ class NetworkService {
         let url = URL(string: "https://themealdb.com/api/json/v1/1/filter.php?c=Dessert")!
         AF.request(url).response { response in
             do {
+                print("Received data from the API: \(response.data)")
                 let mealListResponse = try JSONDecoder().decode(MealListResponse.self, from: response.data!)
                 completion(.success(mealListResponse))
             } catch {
@@ -26,3 +28,4 @@ class NetworkService {
         }
     }
 }
+ 

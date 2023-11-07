@@ -18,6 +18,7 @@
 		766676DD2AF9BECF00E00B17 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766676DC2AF9BECF00E00B17 /* NetworkService.swift */; };
 		766676DF2AF9C06A00E00B17 /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766676DE2AF9C06A00E00B17 /* MealTableViewCell.swift */; };
 		766676E12AF9C39E00E00B17 /* MealListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766676E02AF9C39E00E00B17 /* MealListResponse.swift */; };
+		766676E32AFAC7AF00E00B17 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766676E22AFAC7AF00E00B17 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		766676DC2AF9BECF00E00B17 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		766676DE2AF9C06A00E00B17 /* MealTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealTableViewCell.swift; sourceTree = "<group>"; };
 		766676E02AF9C39E00E00B17 /* MealListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListResponse.swift; sourceTree = "<group>"; };
+		766676E22AFAC7AF00E00B17 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				7644975C2AF98344005B825E /* AppDelegate.swift */,
 				7644975E2AF98344005B825E /* SceneDelegate.swift */,
 				764497602AF98344005B825E /* HomeViewController.swift */,
+				766676E22AFAC7AF00E00B17 /* DetailViewController.swift */,
 				766676E02AF9C39E00E00B17 /* MealListResponse.swift */,
 				766676DA2AF9B1BA00E00B17 /* Meal.swift */,
 				766676DE2AF9C06A00E00B17 /* MealTableViewCell.swift */,
@@ -165,6 +168,7 @@
 				764497612AF98344005B825E /* HomeViewController.swift in Sources */,
 				7644975D2AF98344005B825E /* AppDelegate.swift in Sources */,
 				7644975F2AF98344005B825E /* SceneDelegate.swift in Sources */,
+				766676E32AFAC7AF00E00B17 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

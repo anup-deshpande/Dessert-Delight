@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		7644975D2AF98344005B825E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644975C2AF98344005B825E /* AppDelegate.swift */; };
 		7644975F2AF98344005B825E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7644975E2AF98344005B825E /* SceneDelegate.swift */; };
-		764497612AF98344005B825E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764497602AF98344005B825E /* ViewController.swift */; };
+		764497612AF98344005B825E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 764497602AF98344005B825E /* HomeViewController.swift */; };
 		764497642AF98344005B825E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 764497622AF98344005B825E /* Main.storyboard */; };
 		764497662AF98347005B825E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 764497652AF98347005B825E /* Assets.xcassets */; };
 		764497692AF98347005B825E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 764497672AF98347005B825E /* LaunchScreen.storyboard */; };
@@ -24,7 +24,7 @@
 		764497592AF98344005B825E /* DessertDelight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DessertDelight.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7644975C2AF98344005B825E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7644975E2AF98344005B825E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		764497602AF98344005B825E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		764497602AF98344005B825E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		764497632AF98344005B825E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		764497652AF98347005B825E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		764497682AF98347005B825E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 			children = (
 				7644975C2AF98344005B825E /* AppDelegate.swift */,
 				7644975E2AF98344005B825E /* SceneDelegate.swift */,
-				764497602AF98344005B825E /* ViewController.swift */,
+				764497602AF98344005B825E /* HomeViewController.swift */,
 				766676E02AF9C39E00E00B17 /* MealListResponse.swift */,
 				766676DA2AF9B1BA00E00B17 /* Meal.swift */,
 				766676DE2AF9C06A00E00B17 /* MealTableViewCell.swift */,
@@ -162,7 +162,7 @@
 				766676DB2AF9B1BA00E00B17 /* Meal.swift in Sources */,
 				766676E12AF9C39E00E00B17 /* MealListResponse.swift in Sources */,
 				766676DF2AF9C06A00E00B17 /* MealTableViewCell.swift in Sources */,
-				764497612AF98344005B825E /* ViewController.swift in Sources */,
+				764497612AF98344005B825E /* HomeViewController.swift in Sources */,
 				7644975D2AF98344005B825E /* AppDelegate.swift in Sources */,
 				7644975F2AF98344005B825E /* SceneDelegate.swift in Sources */,
 			);

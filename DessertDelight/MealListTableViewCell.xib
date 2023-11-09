@@ -29,6 +29,9 @@
                             <constraint firstAttribute="width" secondItem="a2n-g2-nIs" secondAttribute="height" multiplier="1:1" id="7rF-GR-tUo"/>
                             <constraint firstAttribute="width" constant="40" id="V5U-GM-ess"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                 </subviews>
                 <constraints>

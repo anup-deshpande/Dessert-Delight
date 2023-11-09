@@ -18,15 +18,16 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        mealTableView.register(UINib(nibName: "MealListTableViewCell", bundle: nil), forCellReuseIdentifier: "MealListTableViewCell")
         
         self.title = "What's for Dessert!"
+        
+        mealTableView.registerNib(for: MealListTableViewCell.self)
+        mealTableView.delegate = self
+        mealTableView.dataSource = self
         
         loadMealList()
         mealTableView.reloadData()
         
-        mealTableView.delegate = self
-        mealTableView.dataSource = self
         
     }
     
@@ -46,17 +47,32 @@ class HomeViewController: UIViewController {
     
 }
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+//MARK: - UITableView delegate methods
+
+extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MealListTableViewCell", for: indexPath) as? MealListTableViewCell else { return UITableViewCell() }
+        let cell: MealListTableViewCell = tableView.dequeueResusableCell(for: indexPath)
         cell.setMeal(meal: dataSource[indexPath.row])
         return cell
     }
-    
-    
+}
+
+extension HomeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        
+        let meal = dataSource[indexPath.row]
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+            detailViewController.mealId = meal.id
+            self.navigationController?.pushViewController(detailViewController, animated: true)
+        } else {
+            print("Error occured while initiating DetailViewController")
+        }
+    }
 }
 

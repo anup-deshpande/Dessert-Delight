@@ -40,16 +40,68 @@
             </objects>
             <point key="canvasLocation" x="1066.4122137404579" y="-2.1126760563380285"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--View Controller-->
         <scene sceneID="F5x-Rc-Qp5">
             <objects>
-                <viewController id="MMD-K6-xs5" customClass="DetailViewController" customModule="DessertDelight" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MMD-K6-xs5" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qva-FC-4ab">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GWe-Yv-8TX">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0sn-uw-1Gg" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="793"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Instructions: " translatesAutoresizingMaskIntoConstraints="NO" id="UcI-PY-l5l">
+                                                <rect key="frame" x="5" y="0.0" width="383" height="33"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Measurements" translatesAutoresizingMaskIntoConstraints="NO" id="pLF-fW-yZb">
+                                                <rect key="frame" x="5" y="45" width="383" height="33"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="textColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="UcI-PY-l5l" secondAttribute="trailing" constant="5" id="1O2-q0-Bot"/>
+                                            <constraint firstAttribute="trailing" secondItem="pLF-fW-yZb" secondAttribute="trailing" constant="5" id="5QW-ar-n8z"/>
+                                            <constraint firstItem="pLF-fW-yZb" firstAttribute="top" secondItem="UcI-PY-l5l" secondAttribute="bottom" constant="12" id="87R-PF-S3F"/>
+                                            <constraint firstItem="pLF-fW-yZb" firstAttribute="leading" secondItem="0sn-uw-1Gg" secondAttribute="leading" constant="5" id="arm-LU-0dJ"/>
+                                            <constraint firstItem="UcI-PY-l5l" firstAttribute="leading" secondItem="0sn-uw-1Gg" secondAttribute="leading" constant="5" id="bwd-ak-Ybb"/>
+                                            <constraint firstItem="UcI-PY-l5l" firstAttribute="top" secondItem="0sn-uw-1Gg" secondAttribute="top" id="iVn-Fk-mAe"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="0sn-uw-1Gg" firstAttribute="height" secondItem="GWe-Yv-8TX" secondAttribute="height" multiplier="1:1" id="0Pj-4q-2y9"/>
+                                    <constraint firstItem="0sn-uw-1Gg" firstAttribute="leading" secondItem="GWe-Yv-8TX" secondAttribute="leading" id="3g6-cO-CK7"/>
+                                    <constraint firstAttribute="bottom" secondItem="0sn-uw-1Gg" secondAttribute="bottom" id="66v-VB-NSf"/>
+                                    <constraint firstAttribute="trailing" secondItem="0sn-uw-1Gg" secondAttribute="trailing" id="FSP-l8-vII"/>
+                                    <constraint firstItem="0sn-uw-1Gg" firstAttribute="top" secondItem="GWe-Yv-8TX" secondAttribute="top" id="mAD-hD-OJM"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="CAs-aI-A3E"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0sn-uw-1Gg" firstAttribute="width" secondItem="qva-FC-4ab" secondAttribute="width" id="Idz-UP-ysd"/>
+                            <constraint firstItem="GWe-Yv-8TX" firstAttribute="leading" secondItem="CAs-aI-A3E" secondAttribute="leading" id="Ngu-pE-dqo"/>
+                            <constraint firstItem="GWe-Yv-8TX" firstAttribute="bottom" secondItem="qva-FC-4ab" secondAttribute="bottom" id="RQc-6J-yhe"/>
+                            <constraint firstItem="GWe-Yv-8TX" firstAttribute="trailing" secondItem="CAs-aI-A3E" secondAttribute="trailing" id="oBJ-pf-dft"/>
+                            <constraint firstItem="GWe-Yv-8TX" firstAttribute="top" secondItem="CAs-aI-A3E" secondAttribute="top" id="xYr-gu-GCE"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="instructionsTextView" destination="UcI-PY-l5l" id="vRl-Gf-UNK"/>
+                        <outlet property="measurementsTextView" destination="pLF-fW-yZb" id="Bwm-vW-YAZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nYA-yi-Vhr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,8 +125,41 @@
             </objects>
             <point key="canvasLocation" x="139.69465648854961" y="-2.1126760563380285"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="sKa-dG-KlE">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="i63-2K-LzS" customClass="DetailViewController" customModule="DessertDelight" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uqg-2p-D3H">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="KhC-1j-iz2">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="y5K-qG-o9p"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="y5K-qG-o9p" firstAttribute="trailing" secondItem="KhC-1j-iz2" secondAttribute="trailing" id="2gK-Gx-O1l"/>
+                            <constraint firstItem="KhC-1j-iz2" firstAttribute="leading" secondItem="y5K-qG-o9p" secondAttribute="leading" id="WJy-xe-Jhp"/>
+                            <constraint firstItem="KhC-1j-iz2" firstAttribute="top" secondItem="y5K-qG-o9p" secondAttribute="top" id="dzS-OF-CCr"/>
+                            <constraint firstItem="y5K-qG-o9p" firstAttribute="bottom" secondItem="KhC-1j-iz2" secondAttribute="bottom" id="pzf-LH-u9z"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mealTableView" destination="KhC-1j-iz2" id="4qi-GX-0wC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="869-hF-skl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2789" y="-8"/>
+        </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

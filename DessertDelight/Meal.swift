@@ -11,6 +11,8 @@ struct Meal: Codable {
     var id: String
     var meal: String
     var thumbnail: String
+    var category: String?
+    var area: String?
     var instructions: String?
 
     var ingredient1: String?
@@ -60,6 +62,8 @@ struct Meal: Codable {
         case meal = "strMeal"
         case thumbnail = "strMealThumb"
         case instructions = "strInstructions"
+        case category = "strCategory"
+        case area = "strArea"
         
         case ingredient1 = "strIngredient1"
         case ingredient2 = "strIngredient2"
@@ -102,5 +106,23 @@ struct Meal: Codable {
         case measure18 = "strMeasure18"
         case measure19 = "strMeasure19"
         case measure20 = "strMeasure20"
+    }
+    
+    var measurements: [(String, String)] {
+        var measurements = [(String, String)]()
+        
+        let ingredients = [ingredient1, ingredient2, ingredient3, ingredient4, ingredient5, ingredient6, ingredient7, ingredient8, ingredient9, ingredient10, ingredient11, ingredient12, ingredient13, ingredient14, ingredient15, ingredient16, ingredient17, ingredient18, ingredient19, ingredient20]
+            .compactMap { $0 }
+            .filter { !$0.isEmpty }
+        
+        let quantities = [measure1, measure2, measure3, measure4, measure5, measure6, measure7, measure8, measure9, measure10, measure11, measure12, measure13, measure14, measure15, measure16, measure17, measure18, measure19, measure20]
+            .compactMap { $0 }
+            .filter { !$0.isEmpty }
+        
+        for i in 0..<ingredients.count {
+            measurements.append((ingredients[i], quantities[i]))
+        }
+        
+        return measurements
     }
 }

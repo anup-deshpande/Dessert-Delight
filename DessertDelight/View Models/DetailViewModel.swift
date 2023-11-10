@@ -1,5 +1,5 @@
 //
-//  HomeViewModel.swift
+//  DetailViewModel.swift
 //  DessertDelight
 //
 //  Created by Anup Deshpande on 11/10/23.
@@ -7,42 +7,40 @@
 
 import Foundation
 
-protocol HomeViewModelDelegate {
-    func mealListUpdated()
+protocol DetailViewModelDelegate {
+    func mealUpdated()
 }
 
-final class HomeViewModel {
+final class DetailViewModel {
     //MARK: - Dependencies
     private let networkService: NetworkServiceProtocol
     
     //MARK: - Properties
-    var delegate: HomeViewModelDelegate?
-    var mealList = [Meal]()
+    var delegate: DetailViewModelDelegate?
+    var mealId: String
+    var meal: Meal?
     
-    init(delegate: HomeViewModelDelegate, networkService: NetworkServiceProtocol) {
+    init(mealId: String, delegate: DetailViewModelDelegate, networkService: NetworkServiceProtocol) {
+        self.mealId = mealId
         self.delegate = delegate
         self.networkService = networkService
-        updateMealList()
-    }
-    
-    public func getMealItem(for index: Int) -> Meal? {
-        mealList[index]
+        updateMeal()
     }
     
     //MARK: - helper functions
     
-    private func updateMealList() {
-        networkService.getMealList { [weak self] result in
+    private func updateMeal() {
+        networkService.getMealDetails(mealID: mealId) { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case .success(let mealListResponse):
-                mealList = mealListResponse.meals
-                delegate?.mealListUpdated()
+                meal = mealListResponse?.meals.first
+                delegate?.mealUpdated()
             case .failure(let error):
                 print("Error fetching API data: \(error)")
             }
         }
     }
-
+    
 }

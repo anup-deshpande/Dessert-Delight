@@ -11,6 +11,7 @@ class DetailViewController: UIViewController {
 
     var mealId: String?
     var dataSource: Meal?
+    private var viewModel: DetailViewModel!
     
     //MARK: - IBOutlets
     
@@ -20,52 +21,18 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        guard let mealId = mealId else { fatalError("mealId not found.") }
+        
+        viewModel = DetailViewModel(mealId: mealId, delegate: self, networkService: NetworkService())
+        
         mealTableView.registerNib(for: MealDetailHeaderTableViewCell.self)
         mealTableView.registerNib(for: MeasurementsTableViewCell.self)
         mealTableView.registerNib(for: MealInstructionsTableViewCell.self)
         
         mealTableView.delegate = self
         mealTableView.dataSource = self
-        
-        getMealDetails()
     }
-    
-    private func getMealDetails() {
-        guard let mealId = mealId else {
-            print("mealId is empty")
-            return
-        }
-        
-        NetworkService().getMealDetails(mealID: mealId) { [weak self] result in
-            guard let self = self else { return }
-            
-            switch result {
-            case .success(let mealListResponse):
-                dataSource = mealListResponse?.meals.first
-                self.mealTableView.reloadData()
-                break
-                
-            case .failure(let error):
-                print("Error fetching API data: \(error)")
-            }
-        }
-    }
-    
-//    private func updateMealDetails(meal: Meal?) {
-//        guard let meal = meal else { return }
-//        
-//        if let instructions = meal.instructions {
-//            self.instructionsTextView.isHidden = false
-//            self.instructionsTextView.text = "Instructions: \n" + instructions
-//        } else {
-//            self.instructionsTextView.isHidden = true
-//        }
-//        
-//        let measurement = meal.measurements
-//        self.measurementsTextView.text = measurement.first!.0 + measurement.first!.1
-//    }
-    
 }
 
 //MARK: - UITableView delegate methods
@@ -73,14 +40,14 @@ class DetailViewController: UIViewController {
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let headerCell = 1
-        let ingredientsList = dataSource?.measurements.count ?? 0
+        let ingredientsList = viewModel.meal?.measurements.count ?? 0
         let instructions = 1
         
         return headerCell + ingredientsList + instructions
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let meal = dataSource else { return UITableViewCell() }
+        guard let meal = viewModel.meal else { return UITableViewCell() }
         let ingredientsList = meal.measurements
         
         switch indexPath.row {
@@ -99,6 +66,16 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             let cell: MealInstructionsTableViewCell = tableView.dequeueResusableCell(for: indexPath)
             cell.configureWith(meal: meal)
             return cell
+        }
+    }
+}
+
+//MARK: -
+extension DetailViewController: DetailViewModelDelegate {
+    func mealUpdated() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            mealTableView.reloadData()
         }
     }
 }

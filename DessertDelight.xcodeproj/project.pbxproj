@@ -37,6 +37,7 @@
 		76CA78F92AFEC69500B5E89B /* HomeViewModelDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA78F82AFEC69500B5E89B /* HomeViewModelDelegateMock.swift */; };
 		76CA78FC2AFEC8E400B5E89B /* DessertList.json in Resources */ = {isa = PBXBuildFile; fileRef = 76CA78FB2AFEC8E400B5E89B /* DessertList.json */; };
 		76D86F3F2AFED02E00BA5BB4 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766676DA2AF9B1BA00E00B17 /* Meal.swift */; };
+		76D86F412AFED2BB00BA5BB4 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D86F402AFED2BB00BA5BB4 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		76CA78F32AFEC2F100B5E89B /* NetworkServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceMock.swift; sourceTree = "<group>"; };
 		76CA78F82AFEC69500B5E89B /* HomeViewModelDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelDelegateMock.swift; sourceTree = "<group>"; };
 		76CA78FB2AFEC8E400B5E89B /* DessertList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DessertList.json; sourceTree = "<group>"; };
+		76D86F402AFED2BB00BA5BB4 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				76CA78D92AFEA67500B5E89B /* HomeViewModel.swift */,
+				76D86F402AFED2BB00BA5BB4 /* DetailViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				764497612AF98344005B825E /* HomeViewController.swift in Sources */,
 				7644975D2AF98344005B825E /* AppDelegate.swift in Sources */,
 				76CA78DA2AFEA67500B5E89B /* HomeViewModel.swift in Sources */,
+				76D86F412AFED2BB00BA5BB4 /* DetailViewModel.swift in Sources */,
 				766676E82AFAC91300E00B17 /* MealListTableViewCell.swift in Sources */,
 				7644975F2AF98344005B825E /* SceneDelegate.swift in Sources */,
 				76CA78D52AFD779700B5E89B /* MeasurementsTableViewCell.swift in Sources */,

@@ -37,7 +37,7 @@ final class HomeViewModel {
             
             switch result {
             case .success(let mealListResponse):
-                mealList = mealListResponse.meals
+                mealList = mealListResponse.meals.sorted(by: { $0.meal < $1.meal })
                 delegate?.mealListUpdated()
             case .failure(let error):
                 print("Error fetching API data: \(error)")

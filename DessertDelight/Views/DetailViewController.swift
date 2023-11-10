@@ -37,7 +37,7 @@ class DetailViewController: UIViewController {
 
 //MARK: - UITableView delegate methods
 
-extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
+extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let headerCell = 1
         let ingredientsList = viewModel.meal?.measurements.count ?? 0
@@ -67,6 +67,12 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             cell.configureWith(meal: meal)
             return cell
         }
+    }
+}
+
+extension DetailViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 }
 

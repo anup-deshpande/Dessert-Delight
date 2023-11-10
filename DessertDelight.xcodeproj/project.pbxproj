@@ -13,7 +13,6 @@
 		764497642AF98344005B825E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 764497622AF98344005B825E /* Main.storyboard */; };
 		764497662AF98347005B825E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 764497652AF98347005B825E /* Assets.xcassets */; };
 		764497692AF98347005B825E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 764497672AF98347005B825E /* LaunchScreen.storyboard */; };
-		766676D92AF9B0DB00E00B17 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 766676D82AF9B0DB00E00B17 /* Alamofire */; };
 		766676DB2AF9B1BA00E00B17 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766676DA2AF9B1BA00E00B17 /* Meal.swift */; };
 		766676DD2AF9BECF00E00B17 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766676DC2AF9BECF00E00B17 /* NetworkService.swift */; };
 		766676E12AF9C39E00E00B17 /* MealListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766676E02AF9C39E00E00B17 /* MealListResponse.swift */; };
@@ -38,6 +37,10 @@
 		76CA78FC2AFEC8E400B5E89B /* DessertList.json in Resources */ = {isa = PBXBuildFile; fileRef = 76CA78FB2AFEC8E400B5E89B /* DessertList.json */; };
 		76D86F3F2AFED02E00BA5BB4 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766676DA2AF9B1BA00E00B17 /* Meal.swift */; };
 		76D86F412AFED2BB00BA5BB4 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D86F402AFED2BB00BA5BB4 /* DetailViewModel.swift */; };
+		76D86F432AFEE87200BA5BB4 /* DetailViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D86F422AFEE87200BA5BB4 /* DetailViewModelTests.swift */; };
+		76D86F452AFEE8BD00BA5BB4 /* DetailViewModelDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D86F442AFEE8BD00BA5BB4 /* DetailViewModelDelegateMock.swift */; };
+		76D86F472AFEE9AB00BA5BB4 /* MealDetails.json in Resources */ = {isa = PBXBuildFile; fileRef = 76D86F462AFEE9AA00BA5BB4 /* MealDetails.json */; };
+		76D86F482AFEF30400BA5BB4 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76D86F402AFED2BB00BA5BB4 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,9 @@
 		76CA78F82AFEC69500B5E89B /* HomeViewModelDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelDelegateMock.swift; sourceTree = "<group>"; };
 		76CA78FB2AFEC8E400B5E89B /* DessertList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DessertList.json; sourceTree = "<group>"; };
 		76D86F402AFED2BB00BA5BB4 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		76D86F422AFEE87200BA5BB4 /* DetailViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelTests.swift; sourceTree = "<group>"; };
+		76D86F442AFEE8BD00BA5BB4 /* DetailViewModelDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModelDelegateMock.swift; sourceTree = "<group>"; };
+		76D86F462AFEE9AA00BA5BB4 /* MealDetails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MealDetails.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +93,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				766676EC2AFACF8500E00B17 /* Kingfisher in Frameworks */,
-				766676D92AF9B0DB00E00B17 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +207,7 @@
 				76CA78FA2AFEC7A900B5E89B /* Data */,
 				76CA78F52AFEC2FB00B5E89B /* Mock Protocols */,
 				76CA78F02AFEC24F00B5E89B /* HomeViewModelTests.swift */,
+				76D86F422AFEE87200BA5BB4 /* DetailViewModelTests.swift */,
 			);
 			path = DessertDelightTests;
 			sourceTree = "<group>";
@@ -211,6 +217,7 @@
 			children = (
 				76CA78F32AFEC2F100B5E89B /* NetworkServiceMock.swift */,
 				76CA78F82AFEC69500B5E89B /* HomeViewModelDelegateMock.swift */,
+				76D86F442AFEE8BD00BA5BB4 /* DetailViewModelDelegateMock.swift */,
 			);
 			path = "Mock Protocols";
 			sourceTree = "<group>";
@@ -219,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				76CA78FB2AFEC8E400B5E89B /* DessertList.json */,
+				76D86F462AFEE9AA00BA5BB4 /* MealDetails.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -240,7 +248,6 @@
 			);
 			name = DessertDelight;
 			packageProductDependencies = (
-				766676D82AF9B0DB00E00B17 /* Alamofire */,
 				766676EB2AFACF8500E00B17 /* Kingfisher */,
 			);
 			productName = DessertDelight;
@@ -294,7 +301,6 @@
 			);
 			mainGroup = 764497502AF98344005B825E;
 			packageReferences = (
-				766676D72AF9B0DB00E00B17 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				766676EA2AFACF8500E00B17 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 7644975A2AF98344005B825E /* Products */;
@@ -327,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				76CA78FC2AFEC8E400B5E89B /* DessertList.json in Resources */,
+				76D86F472AFEE9AB00BA5BB4 /* MealDetails.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,10 +368,13 @@
 				76CA78F22AFEC2DA00B5E89B /* NetworkService.swift in Sources */,
 				76CA78F12AFEC24F00B5E89B /* HomeViewModelTests.swift in Sources */,
 				76D86F3F2AFED02E00BA5BB4 /* Meal.swift in Sources */,
+				76D86F482AFEF30400BA5BB4 /* DetailViewModel.swift in Sources */,
 				76CA78F42AFEC2F100B5E89B /* NetworkServiceMock.swift in Sources */,
 				76CA78F72AFEC62C00B5E89B /* HomeViewModel.swift in Sources */,
 				76CA78F92AFEC69500B5E89B /* HomeViewModelDelegateMock.swift in Sources */,
+				76D86F452AFEE8BD00BA5BB4 /* DetailViewModelDelegateMock.swift in Sources */,
 				76CA78F62AFEC43300B5E89B /* MealListResponse.swift in Sources */,
+				76D86F432AFEE87200BA5BB4 /* DetailViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -644,14 +654,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		766676D72AF9B0DB00E00B17 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.8.1;
-			};
-		};
 		766676EA2AFACF8500E00B17 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
@@ -663,11 +665,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		766676D82AF9B0DB00E00B17 /* Alamofire */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 766676D72AF9B0DB00E00B17 /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
-		};
 		766676EB2AFACF8500E00B17 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 766676EA2AFACF8500E00B17 /* XCRemoteSwiftPackageReference "Kingfisher" */;

@@ -28,8 +28,26 @@
 		76CA78D22AFD66CB00B5E89B /* MealInstructionsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CA78D02AFD66CB00B5E89B /* MealInstructionsTableViewCell.xib */; };
 		76CA78D52AFD779700B5E89B /* MeasurementsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA78D32AFD779700B5E89B /* MeasurementsTableViewCell.swift */; };
 		76CA78D62AFD779700B5E89B /* MeasurementsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CA78D42AFD779700B5E89B /* MeasurementsTableViewCell.xib */; };
-		76CA78D82AFD7AB100B5E89B /* ObjectMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA78D72AFD7AB100B5E89B /* ObjectMapper.swift */; };
+		76CA78DA2AFEA67500B5E89B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA78D92AFEA67500B5E89B /* HomeViewModel.swift */; };
+		76CA78F12AFEC24F00B5E89B /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA78F02AFEC24F00B5E89B /* HomeViewModelTests.swift */; };
+		76CA78F22AFEC2DA00B5E89B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766676DC2AF9BECF00E00B17 /* NetworkService.swift */; };
+		76CA78F42AFEC2F100B5E89B /* NetworkServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA78F32AFEC2F100B5E89B /* NetworkServiceMock.swift */; };
+		76CA78F62AFEC43300B5E89B /* MealListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766676E02AF9C39E00E00B17 /* MealListResponse.swift */; };
+		76CA78F72AFEC62C00B5E89B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA78D92AFEA67500B5E89B /* HomeViewModel.swift */; };
+		76CA78F92AFEC69500B5E89B /* HomeViewModelDelegateMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA78F82AFEC69500B5E89B /* HomeViewModelDelegateMock.swift */; };
+		76CA78FC2AFEC8E400B5E89B /* DessertList.json in Resources */ = {isa = PBXBuildFile; fileRef = 76CA78FB2AFEC8E400B5E89B /* DessertList.json */; };
+		76D86F3F2AFED02E00BA5BB4 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766676DA2AF9B1BA00E00B17 /* Meal.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		76CA78EB2AFEC22800B5E89B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 764497512AF98344005B825E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 764497582AF98344005B825E;
+			remoteInfo = DessertDelight;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		764497592AF98344005B825E /* DessertDelight.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DessertDelight.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,7 +71,12 @@
 		76CA78D02AFD66CB00B5E89B /* MealInstructionsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealInstructionsTableViewCell.xib; sourceTree = "<group>"; };
 		76CA78D32AFD779700B5E89B /* MeasurementsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementsTableViewCell.swift; sourceTree = "<group>"; };
 		76CA78D42AFD779700B5E89B /* MeasurementsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MeasurementsTableViewCell.xib; sourceTree = "<group>"; };
-		76CA78D72AFD7AB100B5E89B /* ObjectMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectMapper.swift; sourceTree = "<group>"; };
+		76CA78D92AFEA67500B5E89B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		76CA78E72AFEC22800B5E89B /* DessertDelightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DessertDelightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		76CA78F02AFEC24F00B5E89B /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
+		76CA78F32AFEC2F100B5E89B /* NetworkServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceMock.swift; sourceTree = "<group>"; };
+		76CA78F82AFEC69500B5E89B /* HomeViewModelDelegateMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelDelegateMock.swift; sourceTree = "<group>"; };
+		76CA78FB2AFEC8E400B5E89B /* DessertList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DessertList.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +89,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		76CA78E42AFEC22800B5E89B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -73,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				7644975B2AF98344005B825E /* DessertDelight */,
+				76CA78E82AFEC22800B5E89B /* DessertDelightTests */,
 				7644975A2AF98344005B825E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -81,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				764497592AF98344005B825E /* DessertDelight.app */,
+				76CA78E72AFEC22800B5E89B /* DessertDelightTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,20 +120,17 @@
 		7644975B2AF98344005B825E /* DessertDelight */ = {
 			isa = PBXGroup;
 			children = (
+				76CA78DF2AFEC19300B5E89B /* Models */,
+				76CA78E12AFEC1B100B5E89B /* Views */,
+				76CA78E02AFEC19F00B5E89B /* View Models */,
 				76CA78CE2AFD667A00B5E89B /* Cells */,
+				76CA78E22AFEC1C600B5E89B /* Services */,
 				76CA78CD2AFD664700B5E89B /* Extensions */,
 				7644975C2AF98344005B825E /* AppDelegate.swift */,
 				7644975E2AF98344005B825E /* SceneDelegate.swift */,
-				764497602AF98344005B825E /* HomeViewController.swift */,
-				766676E22AFAC7AF00E00B17 /* DetailViewController.swift */,
-				766676E02AF9C39E00E00B17 /* MealListResponse.swift */,
-				766676DA2AF9B1BA00E00B17 /* Meal.swift */,
-				766676DC2AF9BECF00E00B17 /* NetworkService.swift */,
-				764497622AF98344005B825E /* Main.storyboard */,
 				764497652AF98347005B825E /* Assets.xcassets */,
 				764497672AF98347005B825E /* LaunchScreen.storyboard */,
 				7644976A2AF98347005B825E /* Info.plist */,
-				76CA78D72AFD7AB100B5E89B /* ObjectMapper.swift */,
 			);
 			path = DessertDelight;
 			sourceTree = "<group>";
@@ -129,6 +158,68 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		76CA78DF2AFEC19300B5E89B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				766676DA2AF9B1BA00E00B17 /* Meal.swift */,
+				766676E02AF9C39E00E00B17 /* MealListResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		76CA78E02AFEC19F00B5E89B /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				76CA78D92AFEA67500B5E89B /* HomeViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		76CA78E12AFEC1B100B5E89B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				764497602AF98344005B825E /* HomeViewController.swift */,
+				766676E22AFAC7AF00E00B17 /* DetailViewController.swift */,
+				764497622AF98344005B825E /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		76CA78E22AFEC1C600B5E89B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				766676DC2AF9BECF00E00B17 /* NetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		76CA78E82AFEC22800B5E89B /* DessertDelightTests */ = {
+			isa = PBXGroup;
+			children = (
+				76CA78FA2AFEC7A900B5E89B /* Data */,
+				76CA78F52AFEC2FB00B5E89B /* Mock Protocols */,
+				76CA78F02AFEC24F00B5E89B /* HomeViewModelTests.swift */,
+			);
+			path = DessertDelightTests;
+			sourceTree = "<group>";
+		};
+		76CA78F52AFEC2FB00B5E89B /* Mock Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				76CA78F32AFEC2F100B5E89B /* NetworkServiceMock.swift */,
+				76CA78F82AFEC69500B5E89B /* HomeViewModelDelegateMock.swift */,
+			);
+			path = "Mock Protocols";
+			sourceTree = "<group>";
+		};
+		76CA78FA2AFEC7A900B5E89B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				76CA78FB2AFEC8E400B5E89B /* DessertList.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -153,6 +244,24 @@
 			productReference = 764497592AF98344005B825E /* DessertDelight.app */;
 			productType = "com.apple.product-type.application";
 		};
+		76CA78E62AFEC22800B5E89B /* DessertDelightTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 76CA78ED2AFEC22800B5E89B /* Build configuration list for PBXNativeTarget "DessertDelightTests" */;
+			buildPhases = (
+				76CA78E32AFEC22800B5E89B /* Sources */,
+				76CA78E42AFEC22800B5E89B /* Frameworks */,
+				76CA78E52AFEC22800B5E89B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				76CA78EC2AFEC22800B5E89B /* PBXTargetDependency */,
+			);
+			name = DessertDelightTests;
+			productName = DessertDelightTests;
+			productReference = 76CA78E72AFEC22800B5E89B /* DessertDelightTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -165,6 +274,10 @@
 				TargetAttributes = {
 					764497582AF98344005B825E = {
 						CreatedOnToolsVersion = 15.0.1;
+					};
+					76CA78E62AFEC22800B5E89B = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 764497582AF98344005B825E;
 					};
 				};
 			};
@@ -186,6 +299,7 @@
 			projectRoot = "";
 			targets = (
 				764497582AF98344005B825E /* DessertDelight */,
+				76CA78E62AFEC22800B5E89B /* DessertDelightTests */,
 			);
 		};
 /* End PBXProject section */
@@ -205,6 +319,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		76CA78E52AFEC22800B5E89B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76CA78FC2AFEC8E400B5E89B /* DessertList.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -220,15 +342,37 @@
 				76CA78C92AFD581F00B5E89B /* MealDetailHeaderTableViewCell.swift in Sources */,
 				764497612AF98344005B825E /* HomeViewController.swift in Sources */,
 				7644975D2AF98344005B825E /* AppDelegate.swift in Sources */,
+				76CA78DA2AFEA67500B5E89B /* HomeViewModel.swift in Sources */,
 				766676E82AFAC91300E00B17 /* MealListTableViewCell.swift in Sources */,
 				7644975F2AF98344005B825E /* SceneDelegate.swift in Sources */,
 				76CA78D52AFD779700B5E89B /* MeasurementsTableViewCell.swift in Sources */,
-				76CA78D82AFD7AB100B5E89B /* ObjectMapper.swift in Sources */,
 				766676E32AFAC7AF00E00B17 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		76CA78E32AFEC22800B5E89B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				76CA78F22AFEC2DA00B5E89B /* NetworkService.swift in Sources */,
+				76CA78F12AFEC24F00B5E89B /* HomeViewModelTests.swift in Sources */,
+				76D86F3F2AFED02E00BA5BB4 /* Meal.swift in Sources */,
+				76CA78F42AFEC2F100B5E89B /* NetworkServiceMock.swift in Sources */,
+				76CA78F72AFEC62C00B5E89B /* HomeViewModel.swift in Sources */,
+				76CA78F92AFEC69500B5E89B /* HomeViewModelDelegateMock.swift in Sources */,
+				76CA78F62AFEC43300B5E89B /* MealListResponse.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		76CA78EC2AFEC22800B5E89B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 764497582AF98344005B825E /* DessertDelight */;
+			targetProxy = 76CA78EB2AFEC22800B5E89B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		764497622AF98344005B825E /* Main.storyboard */ = {
@@ -427,6 +571,42 @@
 			};
 			name = Release;
 		};
+		76CA78EE2AFEC22800B5E89B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 59XJFY72WQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deshpande.DessertDelightTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DessertDelight.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DessertDelight";
+			};
+			name = Debug;
+		};
+		76CA78EF2AFEC22800B5E89B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 59XJFY72WQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.deshpande.DessertDelightTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DessertDelight.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DessertDelight";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -444,6 +624,15 @@
 			buildConfigurations = (
 				7644976E2AF98347005B825E /* Debug */,
 				7644976F2AF98347005B825E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		76CA78ED2AFEC22800B5E89B /* Build configuration list for PBXNativeTarget "DessertDelightTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				76CA78EE2AFEC22800B5E89B /* Debug */,
+				76CA78EF2AFEC22800B5E89B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

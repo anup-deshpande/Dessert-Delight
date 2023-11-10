@@ -47,8 +47,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="mealTItleLabel" destination="3em-cL-R5V" id="TIe-54-jY1"/>
                 <outlet property="mealThumbnailImage" destination="a2n-g2-nIs" id="Hte-hA-9dF"/>
+                <outlet property="mealTitleLabel" destination="3em-cL-R5V" id="TIe-54-jY1"/>
             </connections>
             <point key="canvasLocation" x="211.4503816793893" y="40.845070422535215"/>
         </tableViewCell>

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MealDetailHeaderTableViewCell: UITableViewCell {
 
@@ -14,6 +15,7 @@ class MealDetailHeaderTableViewCell: UITableViewCell {
     @IBOutlet private weak var mealTitleLabel: UILabel!
     @IBOutlet private weak var categoryLabel: UILabel!
     @IBOutlet private weak var areaLabel: UILabel!
+    @IBOutlet private weak var thumbnailImageView: UIImageView!
     
     //MARK: - Override
 
@@ -23,6 +25,9 @@ class MealDetailHeaderTableViewCell: UITableViewCell {
     
     func configureWith(meal: Meal) {
         mealTitleLabel.text = meal.meal
+        
+        let url = URL(string: meal.thumbnail)
+        thumbnailImageView.kf.setImage(with: url)
         
         if let category = meal.category {
             categoryLabel.isHidden = false

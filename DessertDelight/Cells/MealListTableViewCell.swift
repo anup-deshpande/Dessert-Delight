@@ -13,7 +13,7 @@ class MealListTableViewCell: UITableViewCell {
     //MARK: - IBOutlets
 
     @IBOutlet private weak var mealThumbnailImage: UIImageView!
-    @IBOutlet private weak var mealTItleLabel: UILabel!
+    @IBOutlet private weak var mealTitleLabel: UILabel!
     
     //MARK: - Override
 
@@ -23,7 +23,7 @@ class MealListTableViewCell: UITableViewCell {
     }
     
     func setMeal(meal: Meal) {
-        self.mealTItleLabel.text = meal.meal
+        self.mealTitleLabel.text = meal.meal
         
         let thumbnailURL = URL(string: meal.thumbnail)
         self.mealThumbnailImage.kf.setImage(with: thumbnailURL)

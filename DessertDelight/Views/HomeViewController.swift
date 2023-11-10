@@ -12,51 +12,38 @@ class HomeViewController: UIViewController {
     //MARK: - IBOutlets
 
     @IBOutlet private weak var mealTableView: UITableView!
+    
+    private var viewModel: HomeViewModel!
     private var dataSource = [Meal]()
     
     //MARK: - Override
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.title = "What's for Dessert!"
+        
+        viewModel = HomeViewModel(delegate: self, networkService: NetworkService())
         
         mealTableView.registerNib(for: MealListTableViewCell.self)
         mealTableView.delegate = self
         mealTableView.dataSource = self
         
-        loadMealList()
+     
         mealTableView.reloadData()
-        
-        
-    }
-    
-    private func loadMealList() {
-        NetworkService.shared.getMealList { [weak self] result in
-            guard let self = self else { return }
-            
-            switch result {
-            case .success(let mealListResponse):
-                self.dataSource = mealListResponse!.meals
-                self.mealTableView.reloadData()
-            case .failure(let error):
-                print("Error fetching API data: \(error)")
-            }
-        }
-    }
-    
+     }
 }
 
 //MARK: - UITableView delegate methods
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        dataSource.count
+        viewModel.mealList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MealListTableViewCell = tableView.dequeueResusableCell(for: indexPath)
-        cell.setMeal(meal: dataSource[indexPath.row])
+        guard let meal = viewModel.getMealItem(for: indexPath.row) else { return UITableViewCell() }
+        cell.setMeal(meal: meal)
         return cell
     }
 }
@@ -64,8 +51,8 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+        guard let meal = viewModel.getMealItem(for: indexPath.row) else { return }
         
-        let meal = dataSource[indexPath.row]
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
             detailViewController.mealId = meal.id
@@ -75,4 +62,15 @@ extension HomeViewController: UITableViewDelegate {
         }
     }
 }
+
+//MARK: - HomeViewModel Delegate methods
+extension HomeViewController: HomeViewModelDelegate {
+    func mealListUpdated() {
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            self.mealTableView.reloadData()
+        }
+    }
+}
+
 

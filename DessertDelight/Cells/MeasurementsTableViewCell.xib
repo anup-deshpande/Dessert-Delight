@@ -19,16 +19,16 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="z4d-4W-SQJ">
-                        <rect key="frame" x="10" y="5" width="300" height="48"/>
+                        <rect key="frame" x="10" y="10" width="300" height="43"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients : " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zM4-Yf-cKj">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="23.666666666666668"/>
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="18.666666666666668"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="v6R-a9-iTO">
-                                <rect key="frame" x="0.0" y="33.666666666666664" width="300" height="14.333333333333336"/>
+                                <rect key="frame" x="0.0" y="28.666666666666661" width="300" height="14.333333333333332"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredient" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dm2-xn-Oic">
                                         <rect key="frame" x="0.0" y="0.0" width="146" height="14.333333333333334"/>
@@ -51,7 +51,7 @@
                     <constraint firstItem="z4d-4W-SQJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="fam-7x-aRg"/>
                     <constraint firstAttribute="trailing" secondItem="z4d-4W-SQJ" secondAttribute="trailing" constant="10" id="nVU-xG-zAE"/>
                     <constraint firstAttribute="bottom" secondItem="z4d-4W-SQJ" secondAttribute="bottom" constant="5" id="ncv-az-EWs"/>
-                    <constraint firstItem="z4d-4W-SQJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="vd1-Ac-5vc"/>
+                    <constraint firstItem="z4d-4W-SQJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="vd1-Ac-5vc"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

@@ -16,17 +16,11 @@ class DetailViewController: UIViewController {
     
     @IBOutlet private weak var mealTableView: UITableView!
     
-    
-//    @IBOutlet weak var instructionsTextView: UITextView!
-//    @IBOutlet weak var measurementsTextView: UITextView!
-    
     //MARK: - Override
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = mealId ?? "mealId empty"
-        
         mealTableView.registerNib(for: MealDetailHeaderTableViewCell.self)
         mealTableView.registerNib(for: MeasurementsTableViewCell.self)
         mealTableView.registerNib(for: MealInstructionsTableViewCell.self)
@@ -43,7 +37,7 @@ class DetailViewController: UIViewController {
             return
         }
         
-        NetworkService.shared.getMealDetails(mealID: mealId) { [weak self] result in
+        NetworkService().getMealDetails(mealID: mealId) { [weak self] result in
             guard let self = self else { return }
             
             switch result {

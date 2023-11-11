@@ -34,7 +34,7 @@ class NetworkService: NetworkServiceProtocol {
             }
 
             do {
-                var mealListResponse = try JSONDecoder().decode(MealListResponse.self, from: data)
+                let mealListResponse = try JSONDecoder().decode(MealListResponse.self, from: data)
                 completion(.success(mealListResponse))
             } catch {
                 completion(.failure(APIError.invalidData))

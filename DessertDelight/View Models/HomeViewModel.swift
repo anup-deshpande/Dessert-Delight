@@ -31,6 +31,7 @@ final class HomeViewModel {
     
     //MARK: - helper functions
     
+    /// fetch meal list and store it in ascending order
     private func updateMealList() {
         networkService.getMealList { [weak self] result in
             guard let self = self else { return }

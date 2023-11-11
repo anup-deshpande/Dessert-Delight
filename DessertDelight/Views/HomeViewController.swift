@@ -13,8 +13,9 @@ class HomeViewController: UIViewController {
 
     @IBOutlet private weak var mealTableView: UITableView!
     
+    //MARK: - Properties
+
     private var viewModel: HomeViewModel!
-    private var dataSource = [Meal]()
     
     //MARK: - Override
 
@@ -27,7 +28,6 @@ class HomeViewController: UIViewController {
         mealTableView.registerNib(for: MealListTableViewCell.self)
         mealTableView.delegate = self
         mealTableView.dataSource = self
-        
      
         mealTableView.reloadData()
      }
@@ -43,7 +43,7 @@ extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MealListTableViewCell = tableView.dequeueResusableCell(for: indexPath)
         guard let meal = viewModel.getMealItem(for: indexPath.row) else { return UITableViewCell() }
-        cell.setMeal(meal: meal)
+        cell.configureWith(meal: meal)
         return cell
     }
 }

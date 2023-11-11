@@ -22,7 +22,7 @@ class MealListTableViewCell: UITableViewCell {
         self.accessoryType = .disclosureIndicator
     }
     
-    func setMeal(meal: Meal) {
+    func configureWith(meal: Meal) {
         self.mealTitleLabel.text = meal.meal
         
         let thumbnailURL = URL(string: meal.thumbnail)

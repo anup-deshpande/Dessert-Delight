@@ -5,8 +5,9 @@ This iOS app allows users to browse and explore recipes using TheMealDB API. Use
 ## Screenshots
 | Home Screen | Detail Screen |
 |------------|-------------|
-| ![Home-ligh](https://github.com/anup-deshpande/Dessert-Delight/assets/42949670/747edd04-3c23-4394-b0db-3cf3cf17f15c)| ![Detail-light](https://github.com/anup-deshpande/Dessert-Delight/assets/42949670/4b29415e-8b6b-43c8-a7af-5aaf680e9a09) |
-| ![Home-Dark](https://github.com/anup-deshpande/Dessert-Delight/assets/42949670/d0eb992e-8204-45d9-87bf-4caefaed1047) | ![Detail-Dark](https://github.com/anup-deshpande/Dessert-Delight/assets/42949670/1bb03718-46ed-4360-bef0-208beaca12cd) |
+| ![Home-ligh](https://github.com/anup-deshpande/Dessert-Delight/assets/42949670/fc437f7d-326b-4842-94c9-ded4659845be) | ![Detail-light](https://github.com/anup-deshpande/Dessert-Delight/assets/42949670/39ea2592-1fd0-4b53-b983-99e352875234) |
+| ![Home-Dark](https://github.com/anup-deshpande/Dessert-Delight/assets/42949670/c6944335-7df9-49a7-b21c-0992f678c405) | ![Detail-Dark](https://github.com/anup-deshpande/Dessert-Delight/assets/42949670/c3566ca6-8b80-411a-b134-4ca6a84f9019) |
+
 
 ## Requirements
 
@@ -34,3 +35,6 @@ Dessert Delight has been crafted with accessibility in mind, providing a user-fr
 
 View Models are unit tested using Mock stubbing approach. 
 Local json files are used to simulate api responses. This approach allows for testing various scenerios including successful and failure responses. 
+
+## Dependencies
+- Kingfisher - https://github.com/onevcat/Kingfisher

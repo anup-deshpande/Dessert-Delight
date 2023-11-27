@@ -20,6 +20,8 @@
 		766676E82AFAC91300E00B17 /* MealListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766676E62AFAC91300E00B17 /* MealListTableViewCell.swift */; };
 		766676E92AFAC91300E00B17 /* MealListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 766676E72AFAC91300E00B17 /* MealListTableViewCell.xib */; };
 		766676EC2AFACF8500E00B17 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 766676EB2AFACF8500E00B17 /* Kingfisher */; };
+		7684C6B92B14245E00A77F34 /* DetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7684C6B82B14245E00A77F34 /* DetailScreen.swift */; };
+		7684C6BB2B14266200A77F34 /* MealListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7684C6BA2B14266200A77F34 /* MealListCell.swift */; };
 		76CA78C92AFD581F00B5E89B /* MealDetailHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA78C72AFD581F00B5E89B /* MealDetailHeaderTableViewCell.swift */; };
 		76CA78CA2AFD581F00B5E89B /* MealDetailHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CA78C82AFD581F00B5E89B /* MealDetailHeaderTableViewCell.xib */; };
 		76CA78CC2AFD5E6200B5E89B /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CA78CB2AFD5E6200B5E89B /* UITableView+.swift */; };
@@ -68,6 +70,8 @@
 		766676E22AFAC7AF00E00B17 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		766676E62AFAC91300E00B17 /* MealListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListTableViewCell.swift; sourceTree = "<group>"; };
 		766676E72AFAC91300E00B17 /* MealListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealListTableViewCell.xib; sourceTree = "<group>"; };
+		7684C6B82B14245E00A77F34 /* DetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreen.swift; sourceTree = "<group>"; };
+		7684C6BA2B14266200A77F34 /* MealListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListCell.swift; sourceTree = "<group>"; };
 		76CA78C72AFD581F00B5E89B /* MealDetailHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		76CA78C82AFD581F00B5E89B /* MealDetailHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MealDetailHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		76CA78CB2AFD5E6200B5E89B /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 				76CA78D02AFD66CB00B5E89B /* MealInstructionsTableViewCell.xib */,
 				76CA78D32AFD779700B5E89B /* MeasurementsTableViewCell.swift */,
 				76CA78D42AFD779700B5E89B /* MeasurementsTableViewCell.xib */,
+				7684C6BA2B14266200A77F34 /* MealListCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 			children = (
 				764497602AF98344005B825E /* HomeViewController.swift */,
 				766676E22AFAC7AF00E00B17 /* DetailViewController.swift */,
+				7684C6B82B14245E00A77F34 /* DetailScreen.swift */,
 				764497622AF98344005B825E /* Main.storyboard */,
 			);
 			path = Views;
@@ -349,8 +355,10 @@
 				766676DB2AF9B1BA00E00B17 /* Meal.swift in Sources */,
 				766676E12AF9C39E00E00B17 /* MealListResponse.swift in Sources */,
 				76CA78CC2AFD5E6200B5E89B /* UITableView+.swift in Sources */,
+				7684C6B92B14245E00A77F34 /* DetailScreen.swift in Sources */,
 				76CA78C92AFD581F00B5E89B /* MealDetailHeaderTableViewCell.swift in Sources */,
 				764497612AF98344005B825E /* HomeViewController.swift in Sources */,
+				7684C6BB2B14266200A77F34 /* MealListCell.swift in Sources */,
 				7644975D2AF98344005B825E /* AppDelegate.swift in Sources */,
 				76CA78DA2AFEA67500B5E89B /* HomeViewModel.swift in Sources */,
 				76D86F412AFED2BB00BA5BB4 /* DetailViewModel.swift in Sources */,

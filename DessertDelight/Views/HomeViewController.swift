@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class HomeViewController: UIViewController {
 
@@ -53,13 +54,15 @@ extension HomeViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: false)
         guard let meal = viewModel.getMealItem(for: indexPath.row) else { return }
         
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        if let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
-            detailViewController.mealId = meal.id
-            self.navigationController?.pushViewController(detailViewController, animated: true)
-        } else {
-            print("Error occured while initiating DetailViewController")
-        }
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        if let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+//            detailViewController.mealId = meal.id
+//            self.navigationController?.pushViewController(detailViewController, animated: true)
+//        } else {
+//            print("Error occured while initiating DetailViewController")
+//        }
+        let vc = UIHostingController(rootView: DetailScreen())
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 

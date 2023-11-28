@@ -12,14 +12,14 @@ final class HomeViewModelTests: XCTestCase {
     //MARK: - Properties
     
     private var homeViewModelDelegateMock: HomeViewModelDelegateMock!
-    private var networkServiceMock: NetworkServiceMock!
+    private var mealServiceMock: MealServiceMock!
     
     //MARK: - Override
     
     override func setUp() {
         super.setUp()
         
-        networkServiceMock = NetworkServiceMock()
+        mealServiceMock = MealServiceMock()
         homeViewModelDelegateMock = HomeViewModelDelegateMock()
     }
     
@@ -27,7 +27,7 @@ final class HomeViewModelTests: XCTestCase {
         super.tearDown()
         
         // deinit
-        networkServiceMock = nil
+        mealServiceMock = nil
         homeViewModelDelegateMock = nil
     }
     
@@ -45,7 +45,7 @@ final class HomeViewModelTests: XCTestCase {
         let json = try Data(contentsOf: url)
         let mealListResponse = try JSONDecoder().decode(MealListResponse.self, from: json)
         
-        networkServiceMock.getMealListStub = { completion in
+        mealServiceMock.getMealListStub = { completion in
             completion(.success(mealListResponse))
         }
         
@@ -54,7 +54,7 @@ final class HomeViewModelTests: XCTestCase {
         }
         
         // Act
-        let homeViewModel = HomeViewModel(delegate: homeViewModelDelegateMock, networkService: networkServiceMock)
+        let homeViewModel = HomeViewModel(delegate: homeViewModelDelegateMock, mealService: mealServiceMock)
         
         let secondMealItem = try XCTUnwrap(homeViewModel.getMealItem(for: 1))
         
@@ -70,7 +70,7 @@ final class HomeViewModelTests: XCTestCase {
     func testUpdateMealList_returnsFailure() throws {
         // Arrange
         var didCallMealListUpdatedMethod = false
-        networkServiceMock.getMealListStub = { completion in
+        mealServiceMock.getMealListStub = { completion in
             completion(.failure(APIError.invalidResponse))
         }
         
@@ -79,7 +79,7 @@ final class HomeViewModelTests: XCTestCase {
         }
         
         // Act
-        let homeViewModel = HomeViewModel(delegate: homeViewModelDelegateMock, networkService: networkServiceMock)
+        let homeViewModel = HomeViewModel(delegate: homeViewModelDelegateMock, mealService: mealServiceMock)
         
         // Assert
         XCTAssertEqual(homeViewModel.mealList.count, 0)

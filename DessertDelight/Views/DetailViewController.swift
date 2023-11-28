@@ -24,7 +24,7 @@ class DetailViewController: UIViewController {
         
         guard let mealId = mealId else { fatalError("mealId not found.") }
         
-        viewModel = DetailViewModel(mealId: mealId, delegate: self, networkService: NetworkService())
+        viewModel = DetailViewModel(mealId: mealId, delegate: self, mealService: MealService(networkService: NetworkService()))
         
         mealTableView.registerNib(for: MealDetailHeaderTableViewCell.self)
         mealTableView.registerNib(for: MeasurementsTableViewCell.self)

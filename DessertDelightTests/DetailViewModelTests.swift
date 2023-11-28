@@ -12,14 +12,14 @@ final class DetailViewModelTests: XCTestCase {
     //MARK: - Properties
     
     private var detailViewModelDelegateMock: DetailViewModelDelegateMock!
-    private var networkServiceMock: NetworkServiceMock!
+    private var mealServiceMock: MealServiceMock!
     
     //MARK: - Override
     
     override func setUp() {
         super.setUp()
         
-        networkServiceMock = NetworkServiceMock()
+        mealServiceMock = MealServiceMock()
         detailViewModelDelegateMock = DetailViewModelDelegateMock()
     }
     
@@ -27,7 +27,7 @@ final class DetailViewModelTests: XCTestCase {
         super.tearDown()
         
         // deinit
-        networkServiceMock = nil
+        mealServiceMock = nil
         detailViewModelDelegateMock = nil
     }
     
@@ -46,7 +46,7 @@ final class DetailViewModelTests: XCTestCase {
         let json = try Data(contentsOf: url)
         let mealResponse = try JSONDecoder().decode(MealListResponse.self, from: json)
         
-        networkServiceMock.getMealDetailsStub = { mealID, completion in
+        mealServiceMock.getMealDetailsStub = { mealID, completion in
             XCTAssertEqual(mealId, mealID)
             completion(.success(mealResponse))
         }
@@ -56,7 +56,7 @@ final class DetailViewModelTests: XCTestCase {
         }
         
         // Act
-        let detailViewModel = DetailViewModel(mealId: mealId, delegate: detailViewModelDelegateMock, networkService: networkServiceMock)
+        let detailViewModel = DetailViewModel(mealId: mealId, delegate: detailViewModelDelegateMock, mealService: mealServiceMock)
         let meal = try XCTUnwrap(detailViewModel.meal)
         
         // Assert
@@ -68,7 +68,7 @@ final class DetailViewModelTests: XCTestCase {
         // Arrange
         let mealId = "52893"
         var didCallMealUpdatedMethod = false
-        networkServiceMock.getMealDetailsStub = { _, completion in
+        mealServiceMock.getMealDetailsStub = { _, completion in
             completion(.failure(APIError.invalidData))
         }
         
@@ -77,7 +77,7 @@ final class DetailViewModelTests: XCTestCase {
         }
         
         // Act
-        let detailViewModel = DetailViewModel(mealId: mealId, delegate: detailViewModelDelegateMock, networkService: networkServiceMock)
+        let detailViewModel = DetailViewModel(mealId: mealId, delegate: detailViewModelDelegateMock, mealService: mealServiceMock)
         
         // Assert
         XCTAssertNil(detailViewModel.meal)

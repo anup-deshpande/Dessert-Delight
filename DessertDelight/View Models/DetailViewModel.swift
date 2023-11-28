@@ -13,29 +13,29 @@ protocol DetailViewModelDelegate: AnyObject {
 
 final class DetailViewModel {
     //MARK: - Dependencies
-    private let networkService: NetworkServiceProtocol
+    private let mealService: MealServiceProtocol
     
     //MARK: - Properties
     weak var delegate: DetailViewModelDelegate?
     var mealId: String
     var meal: Meal?
     
-    init(mealId: String, delegate: DetailViewModelDelegate, networkService: NetworkServiceProtocol) {
+    init(mealId: String, delegate: DetailViewModelDelegate, mealService: MealServiceProtocol) {
         self.mealId = mealId
         self.delegate = delegate
-        self.networkService = networkService
+        self.mealService = mealService
         updateMeal()
     }
     
     //MARK: - helper functions
     
     private func updateMeal() {
-        networkService.getMealDetails(mealID: mealId) { [weak self] result in
+        mealService.getMealDetails(mealID: mealId) { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case .success(let mealListResponse):
-                meal = mealListResponse?.meals.first
+                meal = mealListResponse.meals.first
                 delegate?.mealUpdated()
             case .failure(let error):
                 print("Error fetching API data: \(error)")

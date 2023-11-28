@@ -23,7 +23,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         self.title = "What's for Dessert!"
         
-        viewModel = HomeViewModel(delegate: self, networkService: NetworkService())
+        viewModel = HomeViewModel(delegate: self, mealService: MealService(networkService: NetworkService()))
         
         mealTableView.registerNib(for: MealListTableViewCell.self)
         mealTableView.delegate = self

@@ -13,15 +13,15 @@ protocol HomeViewModelDelegate: AnyObject {
 
 final class HomeViewModel {
     //MARK: - Dependencies
-    private let networkService: NetworkServiceProtocol
+    private let mealService: MealServiceProtocol
     
     //MARK: - Properties
     weak var delegate: HomeViewModelDelegate?
     var mealList = [Meal]()
     
-    init(delegate: HomeViewModelDelegate, networkService: NetworkServiceProtocol) {
+    init(delegate: HomeViewModelDelegate, mealService: MealServiceProtocol) {
         self.delegate = delegate
-        self.networkService = networkService
+        self.mealService = mealService
         updateMealList()
     }
     
@@ -33,7 +33,7 @@ final class HomeViewModel {
     
     /// fetch meal list and store it in ascending order
     private func updateMealList() {
-        networkService.getMealList { [weak self] result in
+        mealService.getMealList { [weak self] result in
             guard let self = self else { return }
             
             switch result {

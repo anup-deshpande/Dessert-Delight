@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol DetailViewModelDelegate {
+protocol DetailViewModelDelegate: AnyObject {
     func mealUpdated()
 }
 
@@ -16,7 +16,7 @@ final class DetailViewModel {
     private let networkService: NetworkServiceProtocol
     
     //MARK: - Properties
-    var delegate: DetailViewModelDelegate?
+    weak var delegate: DetailViewModelDelegate?
     var mealId: String
     var meal: Meal?
     

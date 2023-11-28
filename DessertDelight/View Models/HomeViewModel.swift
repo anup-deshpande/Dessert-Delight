@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol HomeViewModelDelegate {
+protocol HomeViewModelDelegate: AnyObject {
     func mealListUpdated()
 }
 
@@ -16,7 +16,7 @@ final class HomeViewModel {
     private let networkService: NetworkServiceProtocol
     
     //MARK: - Properties
-    var delegate: HomeViewModelDelegate?
+    weak var delegate: HomeViewModelDelegate?
     var mealList = [Meal]()
     
     init(delegate: HomeViewModelDelegate, networkService: NetworkServiceProtocol) {

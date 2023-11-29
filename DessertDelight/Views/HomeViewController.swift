@@ -25,7 +25,8 @@ class HomeViewController: UIViewController {
         
         viewModel = HomeViewModel(delegate: self, mealService: MealService(networkService: NetworkService()))
         
-        mealTableView.registerNib(for: MealListTableViewCell.self)
+//        mealTableView.registerNib(for: MealListTableViewCell.self)
+        mealTableView.register(MealListTableCell.self, forCellReuseIdentifier: "MealListTableCell")
         mealTableView.delegate = self
         mealTableView.dataSource = self
      
@@ -41,8 +42,9 @@ extension HomeViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: MealListTableViewCell = tableView.dequeueResusableCell(for: indexPath)
+        let cell: MealListTableCell = tableView.dequeueResusableCell(for: indexPath)
         guard let meal = viewModel.getMealItem(for: indexPath.row) else { return UITableViewCell() }
+        cell.accessoryType = .disclosureIndicator
         cell.configureWith(meal: meal)
         return cell
     }
